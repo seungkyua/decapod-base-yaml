@@ -7,9 +7,12 @@ metadata:
 spec:
   helmVersion: v3
   chart:
-    repository: https://prometheus-community.github.io/helm-charts
-    name: kube-prometheus-stack
-    version: 14.5.0
+    # repository: https://prometheus-community.github.io/helm-charts
+    # name: kube-prometheus-stack
+    # version: 14.5.0
+    git: git@github.com:helm/charts
+    ref: master
+    path: charts/stable/prometheus-operator
   releaseName: prometheus-operator
   targetNamespace: lma
   values:
