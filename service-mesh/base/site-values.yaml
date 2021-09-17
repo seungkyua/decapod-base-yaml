@@ -142,6 +142,8 @@ charts:
 - name: servicemesh-grafana-dashboard
   override:
     namespace: istio-system
+    dashboards:
+      label: grafana_dashboard
 
 - name: servicemesh-prometheusmonitor
   override:

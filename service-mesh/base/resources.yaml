@@ -358,6 +358,8 @@ spec:
   targetNamespace: istio-system
   values:
     namespace: istio-system
+    dashboards:
+      label: grafana_dashboard
 
 ---
 apiVersion: helm.fluxcd.io/v1

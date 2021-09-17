@@ -509,6 +509,33 @@ spec:
         vonage-status-panel: true
         grafana-piechart-panel: true
         devopsprodigy-kubegraf-app: true
+        ## oidc settig start
+      server:
+        domain: dashboard-ahnsk.taco-cat.xyz
+        root_url: https://dashboard-ahnsk.taco-cat.xyz/grafana
+        serve_from_sub_path: true
+      auth.generic_oauth:
+        enabled: true
+        name: keycloakOAuth
+        allow_sign_up: true
+        client_id: grafana
+        client_secret: e0512292-7d00-43df-9d5a-f73ca5684f52
+        scopes: openid profile email
+        auth_url: https://keycloak-ahnsk.taco-cat.xyz/auth/realms/hanu-reference/protocol/openid-connect/auth
+        token_url: https://keycloak-ahnsk.taco-cat.xyz/auth/realms/hanu-reference/protocol/openid-connect/token
+        api_url: https://keycloak-ahnsk.taco-cat.xyz/auth/realms/hanu-reference/protocol/openid-connect/userinfo
+      auth:
+        disable_login_form: false
+        oauth_auto_login: true
+        signout_redirect_url: http://localhost:8080/api/v1/sso/logout?path=http://localhost:4200
+      security:
+        allow_embedding: true
+        cookie_secure: true
+        cookie_samesite: none
+      users:
+        auto_assign_org: true
+        auto_assign_org_role: Admin
+      ## oidc settig end
     plugins:
     - vonage-status-panel
     - grafana-piechart-panel
