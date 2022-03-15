@@ -104,7 +104,7 @@ spec:
     type: helmrepo
     repository: https://argoproj.github.io/argo-helm
     name: argo-workflows
-    version: 0.2.6
+    version: 0.10.0
   releaseName: argo-workflows-operator
   targetNamespace: argo
   values:
