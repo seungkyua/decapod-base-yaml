@@ -115,6 +115,10 @@ spec:
       extraArgs:
         - "--auth-mode=server"
     controller:
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1024Mi
       containerRuntimeExecutor: k8sapi
       image:
         tag: v3.2.6
