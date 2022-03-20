@@ -527,6 +527,34 @@ spec:
       plugins:
         vonage-status-panel: true
         grafana-piechart-panel: true
+      server:
+        domain: dashboard-04a70f29.taco-cat.xyz
+        root_url: https://dashboard-04a70f29.taco-cat.xyz/grafana
+        serve_from_sub_path: true
+      auth.generic_oauth:
+        enabled: true
+        name: keycloak
+        allow_sign_up: true
+        client_id: grafana
+        client_secret: uZZTda3NYmGYZEtaS3ibDVR552B6AuQL
+        scopes: openid profile email
+        auth_url: https://keycloak-eom.taco-cat.xyz/auth/realms/04a70f29/protocol/openid-connect/auth
+        token_url: https://keycloak-eom.taco-cat.xyz/auth/realms/04a70f29/protocol/openid-connect/token
+        api_url: https://keycloak-eom.taco-cat.xyz/auth/realms/ahnsk/04a70f29/openid-connect/userinfo
+      auth:
+        disable_login_form: false
+        oauth_auto_login: true
+        disable_signout_menu: true
+      security:
+        allow_embedding: true
+        cookie_secure: true
+        cookie_samesite: none
+      user:
+        auto_assign_org: true
+        auto_assign_org_role: Admin
+      user:
+        auto_assign_org: true
+        auto_assign_org_role: Admin
     plugins:
     - vonage-status-panel
     - grafana-piechart-panel
